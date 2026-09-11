@@ -1,4 +1,4 @@
-N = int(input("Entrer un entier N: "))
+N = int(input("Entrez un entier N : "))
 i = 2
 k = 2
 pi = 3
