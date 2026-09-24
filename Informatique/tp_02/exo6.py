@@ -1,9 +1,11 @@
-import requests
+from json import load
+from urllib.request import urlopen
+
 
 def get_university_data(country = "France"):
     url = f"http://universities.hipolabs.com/search?country={country}"
 
-    rawdata = requests.get(url)
+    rawdata = get(url)
 
     if not rawdata:
         raise Exception
@@ -15,7 +17,3 @@ def get_university_data(country = "France"):
 if __name__ == "__main__":
     uni_data = get_university_data("France")
     print(uni_data)
-
-for universite in uni_data:
-    if uni_data[university][state-province] != None:
-        print(uni_data)

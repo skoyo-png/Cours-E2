@@ -1,5 +1,6 @@
 p = ["10","2","C","D","+"]
 
+
 def calculScore(p):
     scores = []
     for i in p:
