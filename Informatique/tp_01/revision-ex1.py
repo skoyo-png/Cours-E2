@@ -1,5 +1,4 @@
 import sys
-
 while True:
     type = str(input("Quelle est l'opération que vous souhaitez utiliser ? (a)ddition, (s)oustraction, (m)ultiplication, (d)ivision : "))
     type = type.lower()
