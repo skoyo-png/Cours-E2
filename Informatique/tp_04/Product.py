@@ -15,9 +15,8 @@ def get_price_it(self):
 name_products = [("001", "Clavier", 50) , ("002", "Souris", 30), ("003", "Ecran", 200), ("004", "Ordinateur", 1000)]
 
 def create_products(name_products):
-    return [Product(code, name, price) for code, name, price in name_products]
+    return [Product(code, name, get_price_it(Product(code, name, price))) for code, name, price in name_products]
 
 products = create_products(name_products)
-print(products[0])
 for p in products:
     print(p)
