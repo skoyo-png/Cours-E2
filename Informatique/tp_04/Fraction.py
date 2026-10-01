@@ -45,4 +45,27 @@ class Fraction:
                 return Fraction(numerateur, denominateur)
             else:
                 return TypeError("L'opération n'est pas définie pour ce type.")
-print(Fraction(1, 2))
+
+        def inferieur(self, other):
+            if isinstance(other, Fraction):
+                return self.numerateur * other.denominateur < other.numerateur * self.denominateur
+            else:
+                return TypeError("L'opération n'est pas définie pour ce type.")
+
+        def superieur(self, other):
+            if isinstance(other, Fraction):
+                return self.numerateur * other.denominateur > other.numerateur * self.denominateur
+            else:
+                return TypeError("L'opération n'est pas définie pour ce type.")
+
+        def inferieur_ou_egal(self, other):
+            if isinstance(other, Fraction):
+                return self.numerateur * other.denominateur <= other.numerateur * self.denominateur
+            else:
+                return TypeError("L'opération n'est pas définie pour ce type.")
+
+        def superieur_ou_egal(self, other):
+            if isinstance(other, Fraction):
+                return self.numerateur * other.denominateur >= other.numerateur * self.denominateur
+            else:
+                return TypeError("L'opération n'est pas définie pour ce type.")
