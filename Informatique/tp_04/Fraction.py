@@ -45,4 +45,4 @@ class Fraction:
                 return Fraction(numerateur, denominateur)
             else:
                 return TypeError("L'opération n'est pas définie pour ce type.")
-        
+print(Fraction(1, 2))
