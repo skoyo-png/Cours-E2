@@ -69,3 +69,15 @@ class Fraction:
                 return self.numerateur * other.denominateur >= other.numerateur * self.denominateur
             else:
                 return TypeError("L'opération n'est pas définie pour ce type.")
+            
+        def strictement_egal(self, other):
+            if isinstance(other, Fraction):
+                return self.numerateur * other.denominateur == other.numerateur * self.denominateur
+            else:
+                return TypeError("L'opération n'est pas définie pour ce type.")
+
+        def différent_ou_egal(self, other):
+            if isinstance(other, Fraction):
+                return self.numerateur * other.denominateur != other.numerateur * self.denominateur
+            else:
+                return TypeError("L'opération n'est pas définie pour ce type.")
