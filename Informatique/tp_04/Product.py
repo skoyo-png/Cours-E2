@@ -1,22 +1,29 @@
 class Product:
+    flat_tax = 0.2 
     def __init__(self, code, name, price):
         self.code = str(code)
         self.name = str(name)
         self.price = float(price)
 
+    def get_price_it(self,tax):
+        return self.price * (1 + tax)
+
+    def get_price_it_flat(self):
+        return self.price * (1 + Product.flat_tax)
+    
     def __str__(self):
-        return f"{self.code} - {self.name} - {self.price}"
+        return f"{self.code} - {self.name} - {round(self.get_price_it_flat(), 2)}"
 
-taxe = float(input("Entrez le taux de taxe (en pourcentage) : "))
-def get_price_it(self):
-    return self.price + (self.price * taxe / 100)
+from Product import Product
+
+p1 = Product("FR0001", "Stylo Rouge", 10)
+p2 = Product("FR0007", "Stylo Violet", 0.99)
+
+print(f"{p1.code} - {p1.name} - {p1.get_price_it(0.2)}")
+print(f"{p2.code} - {p2.name} - {p2.get_price_it(0.2)}")
 
 
-name_products = [("001", "Clavier", 50) , ("002", "Souris", 30), ("003", "Ecran", 200), ("004", "Ordinateur", 1000)]
+Product.flat_tax = 0.5
 
-def create_products(name_products):
-    return [Product(code, name, get_price_it(Product(code, name, price))) for code, name, price in name_products]
-
-products = create_products(name_products)
-for p in products:
-    print(p)
+print(f"{p1.code} - {p1.name} - {p1.get_price_it_flat()}")
+print(p2)
